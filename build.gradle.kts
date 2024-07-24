@@ -2,9 +2,10 @@ plugins {
     id("java")
     kotlin("jvm")
     application
+    `maven-publish`
 }
 
-group = "org.example"
+group = "com.github.codybrookshear"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -24,8 +25,9 @@ kotlin {
     jvmToolchain(11)
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+java {
+    withSourcesJar()
+    withJavadocJar()
 }
 
 application {
