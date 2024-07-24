@@ -1,9 +1,12 @@
 package org.example;
 
 fun main() {
-        println("Hello and welcome!");
 
-        for (i in 1..5) {
-            println("i = $i");
-        }
+    var d = Deck()
+
+    println(d.deal_card())
+    println(d.deal_card())
+    d.shuffle()
+    println(d.deal_card())
+    println(d.deal_card())
 }
