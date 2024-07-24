@@ -1,12 +1,11 @@
 package org.example;
 
 fun main() {
+    val d = Deck()
 
-    var d = Deck()
-
+    println(d)
     println(d.deal_card())
-    println(d.deal_card())
+    println(d)
     d.shuffle()
-    println(d.deal_card())
-    println(d.deal_card())
+    println(d)
 }
