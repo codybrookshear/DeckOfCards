@@ -27,7 +27,7 @@ while (d2.deal_card().also { card = it } != null) {  // just another way to loop
 print("\n")
 ```
 
-We get this output:
+We get this output (this run):
 ```text
 A❤ 2❤ 3❤ 4❤ 5❤ 6❤ 7❤ 8❤ 9❤ T❤ J❤ Q❤ K❤ A♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ T♠ J♠ Q♠ K♠ A♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ T♣ J♣ Q♣ K♣ A♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ T♦ J♦ Q♦ K♦ 
 8♣ 4♣ 6♠ 2♠ 9♦ 2♦ K♠ 5♠ 7♠ K❤ 2❤ J♠ K♣ A♣ J♦ 7❤ 3❤ A♦ 5❤ A❤ 8♠ 4♦ 7♣ Q♦ 2♣ 5♦ 7♦ 4❤ 3♠ T♠ A♠ 6❤ 9♣ T♣ 4♠ 8♦ 5♣ J❤ 8❤ 3♣ J♣ 3♦ 9♠ 6♣ 9❤ T♦ K♦ Q♣ Q♠ T❤ 6♦ Q❤
