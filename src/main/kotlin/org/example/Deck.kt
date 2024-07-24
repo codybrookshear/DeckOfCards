@@ -1,5 +1,7 @@
 package org.example
 
+import kotlin.random.Random
+
 class Deck {
 
     private val cards = mutableListOf<Card>()
@@ -13,27 +15,23 @@ class Deck {
         }
     }
 
+    // it just randomly rearranges the cards. it's not a "real world" shuffle like a human would do where
+    // the cards get interleaved in a quasi-deterministic manner.
+    // also, this is not thread safe.
     fun shuffle() {
-        var halfSize = cards.size / 2
-        if (cards.size % 2 == 1) {
-            // if odd, top half gets the extra card
-            halfSize++
-        }
 
-        val topHalf = cards.subList(0, halfSize)
-        val bottomHalf = cards.subList(halfSize, cards.size)
+        val copy = cards
         val shuffled = mutableListOf<Card>()
-        for (i in topHalf.indices) {
-            shuffled.add(topHalf[i])
-            if (i < bottomHalf.size) { // take care of odd # of cards situation
-                shuffled.add(bottomHalf[i])
-            }
+
+        while (copy.isNotEmpty()) {
+            val r = Random.nextInt(0, copy.size)
+            shuffled.add(copy[r])
+            copy.removeAt(r)
         }
 
         // replace the Cards list with the shuffled list
         cards.clear()
         cards.addAll(shuffled)
-
     }
 
     fun deal_card() : Card? {
@@ -41,14 +39,5 @@ class Deck {
             return null
         }
         return cards.removeAt(0)
-    }
-
-    override fun toString(): String {
-        val result = buildString {
-            for (c in cards) {
-                append("$c ")
-            }
-        }
-        return result
     }
 }

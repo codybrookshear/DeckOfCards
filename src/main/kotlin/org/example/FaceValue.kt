@@ -10,7 +10,7 @@ enum class FaceValue(val displayValue: String) {
     SEVEN("7"),
     EIGHT("8"),
     NINE("9"),
-    TEN("10"),
+    TEN("T"),  // T instead of 10 to keep it to a single character.
     JACK("J"),
     QUEEN("Q"),
     KING("K");
