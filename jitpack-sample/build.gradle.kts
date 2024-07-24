@@ -3,7 +3,6 @@ plugins {
 }
 
 group = "org.test"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -11,5 +10,5 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.codybrookshear:DeckOfCards:-SNAPSHOT")
+    implementation("com.github.codybrookshear:DeckOfCards:f91d1ddb")
 }

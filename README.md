@@ -54,14 +54,16 @@ Run unit tests. See tests in [src/test/kotlin](src/test/kotlin). We are using [J
 
 ## How can I use this library in my project?
 
+The library is published using [Jitpack](jitpack.io).
+
 [![](https://jitpack.io/v/codybrookshear/DeckOfCards.svg)](https://jitpack.io/#codybrookshear/DeckOfCards)
 
-The library is published using [Jitpack](jitpack.io). 
+Tests are ran using JitCI:
+
+[![](https://jitci.com/gh/codybrookshear/DeckOfCards/svg)](https://jitci.com/gh/codybrookshear/DeckOfCards)
+
 
 ## Anything else to know?
-
-* There's unit 
-* There's [Gitlab CI](.gitlab-ci.yaml) set up to run tests on every commit
 
 > [!NOTE]  
 > Open question - as-is there's no way for the caller (or unit tests) to verify a shuffle actually occurred. Do we need a `Deck.checksum()` method that can be used to "verify" a shuffle actually happened?  Perhaps each card would have a UUID and then we'd need an algorithm that takes all these into account and creates a unique signature that changes after a shuffle occurs. BUT can't be reverse engineered to figure out card order.
