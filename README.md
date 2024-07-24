@@ -1,47 +1,25 @@
 # DeckOfCards
-Simulate a deck of cards.
+Kotlin library that simulates a deck of playing cards that can be dealt and shuffled.
 
 ## What does this library do?
 
 A simple, runnable example is provided in [Main.kt](src/main/kotlin/org/example/Main.kt). Running this code:
+
 ```kotlin
 val d = Deck()
-println(d)
-println(d.deal_card())
-println(d)
-d.shuffle()
-println(d)
+println(d)              // start with 52 cards, always in same order
+println(d.deal_card())  // remove top card (A❤)
+println(d)              // top card (A❤) is gone. 2❤ is top card now.
+d.shuffle()             // mix them up in a deterministic way ("out shuffle")
+println(d)              // after shuffle
 ```
 
-Output:
+We get this output:
 ```text
 A❤ 2❤ 3❤ 4❤ 5❤ 6❤ 7❤ 8❤ 9❤ 10❤ J❤ Q❤ K❤ A♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣ A♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦ 
 A❤
 2❤ 3❤ 4❤ 5❤ 6❤ 7❤ 8❤ 9❤ 10❤ J❤ Q❤ K❤ A♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣ A♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦ 
 2❤ 2♣ 3❤ 3♣ 4❤ 4♣ 5❤ 5♣ 6❤ 6♣ 7❤ 7♣ 8❤ 8♣ 9❤ 9♣ 10❤ 10♣ J❤ J♣ Q❤ Q♣ K❤ K♣ A♠ A♦ 2♠ 2♦ 3♠ 3♦ 4♠ 4♦ 5♠ 5♦ 6♠ 6♦ 7♠ 7♦ 8♠ 8♦ 9♠ 9♦ 10♠ 10♦ J♠ J♦ Q♠ Q♦ K♠ K♦ A♣ 
-```
-
-### What?
-Let me explain what that output a bit more. We start with a full deck of cards as seen by `println(d)`:
-
-```text
-A❤ 2❤ 3❤ 4❤ 5❤ 6❤ 7❤ 8❤ 9❤ 10❤ J❤ Q❤ K❤ A♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣ A♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦
-```
-
-We deal the top card (A❤) off the deck and print it out by calling `println(d.deal_card())`:
-
-```text
-A❤
-```
-
-We verify the dealt card (A❤) is indeed gone by calling `println(d)` again:
-```text
-2❤ 3❤ 4❤ 5❤ 6❤ 7❤ 8❤ 9❤ 10❤ J❤ Q❤ K❤ A♠ 2♠ 3♠ 4♠ 5♠ 6♠ 7♠ 8♠ 9♠ 10♠ J♠ Q♠ K♠ A♣ 2♣ 3♣ 4♣ 5♣ 6♣ 7♣ 8♣ 9♣ 10♣ J♣ Q♣ K♣ A♦ 2♦ 3♦ 4♦ 5♦ 6♦ 7♦ 8♦ 9♦ 10♦ J♦ Q♦ K♦
-```
-
-Now we call `shuffle()` to shuffle the cards, and then call `println(d)` again to see the result of the shuffle:
-```text
-2❤ 2♣ 3❤ 3♣ 4❤ 4♣ 5❤ 5♣ 6❤ 6♣ 7❤ 7♣ 8❤ 8♣ 9❤ 9♣ 10❤ 10♣ J❤ J♣ Q❤ Q♣ K❤ K♣ A♠ A♦ 2♠ 2♦ 3♠ 3♦ 4♠ 4♦ 5♠ 5♦ 6♠ 6♦ 7♠ 7♦ 8♠ 8♦ 9♠ 9♦ 10♠ 10♦ J♠ J♦ Q♠ Q♦ K♠ K♦ A♣
 ```
 
 ### How does `shuffle()` work? 
@@ -65,6 +43,15 @@ and then shuffled together as so:
 8♦ J♦ 9♦ Q♦ 10♦ K♦
 ```
 
+## How can I build the library?
+
+./gradlew ...
+
 ## How can I use this library in my project?
 
-add jitpack instructions 
+add jitpack instructions
+
+## Anything else to know?
+
+* There's unit tests in [src/test/kotlin](src/test/kotlin), using [Junit 5](https://junit.org/junit5/docs/current/user-guide/).
+* There's [Gitlab CI](.gitlab-ci.yaml) set up to run tests on every commit
