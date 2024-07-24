@@ -45,4 +45,6 @@ add jitpack instructions
 
 * There's unit tests in [src/test/kotlin](src/test/kotlin), using [Junit 5](https://junit.org/junit5/docs/current/user-guide/).
 * There's [Gitlab CI](.gitlab-ci.yaml) set up to run tests on every commit
-* Open question - as-is there's no way for the caller (or unit tests) to verify a shuffle actually occurred. Do we need a `Deck.checksum()` method that can be used to "verify" a shuffle actually happened?  Perhaps each card would have a UUID and then we'd need an algorithm that takes all these into account and creates a unique signature that changes after a shuffle occurs. BUT can't be reverse engineered to figure out card order.
+
+> [!NOTE]  
+> Open question - as-is there's no way for the caller (or unit tests) to verify a shuffle actually occurred. Do we need a `Deck.checksum()` method that can be used to "verify" a shuffle actually happened?  Perhaps each card would have a UUID and then we'd need an algorithm that takes all these into account and creates a unique signature that changes after a shuffle occurs. BUT can't be reverse engineered to figure out card order.
