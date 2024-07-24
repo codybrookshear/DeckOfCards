@@ -1,7 +1,7 @@
-import org.example.Card
-import org.example.Deck
-import org.example.FaceValue
-import org.example.Suit
+import com.github.codybrookshear.deckofcards.Card
+import com.github.codybrookshear.deckofcards.Deck
+import com.github.codybrookshear.deckofcards.FaceValue
+import com.github.codybrookshear.deckofcards.Suit
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Order

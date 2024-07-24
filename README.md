@@ -54,7 +54,9 @@ Run unit tests. See tests in [src/test/kotlin](src/test/kotlin). We are using [J
 
 ## How can I use this library in my project?
 
-add jitpack instructions
+[![](https://jitpack.io/v/codybrookshear/DeckOfCards.svg)](https://jitpack.io/#codybrookshear/DeckOfCards)
+
+The library is published using [Jitpack](jitpack.io). 
 
 ## Anything else to know?
 

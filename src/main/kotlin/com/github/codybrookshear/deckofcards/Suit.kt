@@ -1,4 +1,4 @@
-package org.example
+package com.github.codybrookshear.deckofcards
 
 enum class Suit(val displayValue: String) {
     HEARTS("❤"),

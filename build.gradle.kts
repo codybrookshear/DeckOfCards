@@ -5,7 +5,7 @@ plugins {
     `maven-publish`
 }
 
-group = "com.github.codybrookshear"
+group = "com.github.codybrookshear.deckofcards"
 version = "1.0-SNAPSHOT"
 
 repositories {

@@ -1,4 +1,4 @@
-package org.example
+package com.github.codybrookshear.deckofcards
 
 enum class FaceValue(val displayValue: String) {
     ACE("A"),
