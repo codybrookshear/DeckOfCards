@@ -1,6 +1,7 @@
 plugins {
     id("java")
     kotlin("jvm")
+    application
 }
 
 group = "org.example"
@@ -21,4 +22,12 @@ tasks.test {
 }
 kotlin {
     jvmToolchain(11)
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "11"
+}
+
+application {
+    mainClass.set("MainKt")
 }

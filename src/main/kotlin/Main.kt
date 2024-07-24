@@ -1,6 +1,8 @@
-package org.example;
+import org.example.Card
+import org.example.Deck
 
-fun main() {
+
+fun main(args: Array<String>) {
     val d = Deck()  // a new deck, left un-shuffled, will be in a deterministic order
 
     for (i in 1..52) {
