@@ -14,8 +14,6 @@ class Deck {
     }
 
     fun shuffle() {
-        // TODO unit test
-
         var halfSize = cards.size / 2
         if (cards.size % 2 == 1) {
             // if odd, top half gets the extra card
