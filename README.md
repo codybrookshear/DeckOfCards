@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.codybrookshear:DeckOfCards:f91d1ddb")
+    implementation("com.github.codybrookshear:deckofcards:1.0.1")
 }
 ```
 
