@@ -3,6 +3,7 @@ plugins {
     kotlin("jvm")
     application
     `maven-publish`
+    signing
 }
 
 group = "com.github.codybrookshear.deckofcards"
@@ -42,11 +43,11 @@ publishing {
     }
     repositories {
         maven {
-            name = "DeckOfCards"
-            url = uri("https://github.com/codybrookshear/DeckOfCards")
+            name = "github"
+            url = uri("https://maven.pkg.github.com/codybrookshear/DeckOfCards")
             credentials {
-                username = project.findProperty("mavenUser") as String? ?: System.getenv("MAVEN_USER")
-                password = project.findProperty("mavenPassword") as String? ?: System.getenv("MAVEN_PASSWORD")
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+                password = project.findProperty("gpr.token") as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
