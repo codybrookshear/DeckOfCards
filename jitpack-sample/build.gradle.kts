@@ -1,8 +1,7 @@
 plugins {
     id("java")
+    application
 }
-
-group = "org.test"
 
 repositories {
     mavenCentral()
@@ -11,4 +10,8 @@ repositories {
 
 dependencies {
     implementation("com.github.codybrookshear:DeckOfCards:f91d1ddb")
+}
+
+application {
+    mainClass.set("Main")
 }

@@ -1,4 +1,3 @@
-package org.test;
 import org.example.Card;
 import org.example.Deck;
 
@@ -13,6 +12,4 @@ public class Main {
         card = d.deal_card();
         System.out.println(card);
     }
-
-
 }
