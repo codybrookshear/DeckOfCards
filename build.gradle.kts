@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.github.codybrookshear.deckofcards"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -32,4 +32,22 @@ java {
 
 application {
     mainClass.set("MainKt")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenKotlin") {
+            from(components["kotlin"])
+        }
+    }
+    repositories {
+        maven {
+            name = "DeckOfCards"
+            url = uri("https://github.com/codybrookshear/DeckOfCards")
+            credentials {
+                username = project.findProperty("mavenUser") as String? ?: System.getenv("MAVEN_USER")
+                password = project.findProperty("mavenPassword") as String? ?: System.getenv("MAVEN_PASSWORD")
+            }
+        }
+    }
 }
